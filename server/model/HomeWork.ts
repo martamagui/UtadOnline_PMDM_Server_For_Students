@@ -8,16 +8,17 @@ export interface HomeWork extends Document {
     description: string;
     necessary_materials: [string]
 }
+const SubjectSchema = new Schema({
+    title: String,
+    class: String
+});
 
 const homeWorktSchema = new Schema({
     title: {
         type: String,
         required: true,
     },
-    subject: {
-        type: String,
-        required: true,
-    },
+    subject: SubjectSchema,
     teacher_name: {
         type: String,
         required: true,
