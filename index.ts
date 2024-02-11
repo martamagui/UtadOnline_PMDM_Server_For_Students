@@ -8,6 +8,7 @@ import { HomeWorkRoutes } from "./server/routes/HomeWorkRoutes";
 //Configuration
 import configuration from "./server/configuration/configuration";
 import { dbConnection } from "./server/db/dbConnection";
+import { swaggerSpec, swaggerUI } from "./server/documentation/swagger";
 
 class Index {
   app: Application;
@@ -39,7 +40,7 @@ class Index {
     this.app.get("/", (req, res) => {
       res.send("Invaild endpoint");
     });
-    this.app.use(this.apiV1, new HomeWorkRoutes().router);
+    this.app.use(this.apiV1, new HomeWorkRoutes().router);;
   }
 }
 

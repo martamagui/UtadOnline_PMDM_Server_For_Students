@@ -13,8 +13,15 @@ export class HomeWorkRoutes {
     }
 
     private gets() {
+
         this.router.get(
             "/homeWork/:id",
+            (req: Request, res: Response) => {
+                HomeWorkGetController.homeWork(req, res);
+            }
+        );
+        this.router.get(
+            "/homeWork/",
             (req: Request, res: Response) => {
                 HomeWorkGetController.homeWork(req, res);
             }
