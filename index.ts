@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 
 //Routes
 import { HomeWorkRoutes } from "./server/routes/HomeWorkRoutes";
+import { TaskModelRoutes } from "./server/routes/TaskModelsRoutes";
 
 //Configuration
 import configuration from "./server/configuration/configuration";
@@ -40,7 +41,8 @@ class Index {
     this.app.get("/", (req, res) => {
       res.send("Invaild endpoint");
     });
-    this.app.use(this.apiV1, new HomeWorkRoutes().router);;
+    this.app.use(this.apiV1, new HomeWorkRoutes().router);
+    this.app.use(this.apiV1, new TaskModelRoutes().router);
   }
 }
 
