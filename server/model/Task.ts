@@ -4,7 +4,7 @@ export interface TaskModel extends Document {
     task_title: string;
     project: object;
     employee: string;
-    deadline: string;
+    dead_line: string;
     description: string;
     details: [string];
 }
@@ -24,7 +24,7 @@ const taskSchema = new Schema({
         type: String,
         required: true,
     },
-    deadline: {
+    dead_line: {
         type: String,
         required: true,
     },

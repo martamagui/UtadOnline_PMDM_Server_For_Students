@@ -11,7 +11,7 @@ class TaskGetController {
                     return res.status(200).json(homeWork);
                 }
             } else {
-                return res.status(404).json({ message: "Missing school name" });
+                return res.status(404).json({ message: "Missing department name" });
             }
             return res.status(404).json({ message: "Not found." });
         } catch (error) {
