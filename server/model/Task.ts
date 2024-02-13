@@ -12,6 +12,7 @@ const ProjectSchema = new Schema({
     title: String,
     department: String,
     project_dead_line: String,
+    project_photo: String
 });
 
 const taskSchema = new Schema({
