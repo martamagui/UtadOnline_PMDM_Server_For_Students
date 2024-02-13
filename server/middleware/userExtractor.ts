@@ -15,7 +15,7 @@ export const userExtractor = async (
     if (auth.toLowerCase().startsWith("bearer")) {
       const token = auth.trim();
       if (auth != null && auth.length > 0) {
-        console.log(req.body.token);
+        console.log(auth);
       } else {
         return res.status(401).json({ message: "You need to add the authorization in the request header." });
       }
