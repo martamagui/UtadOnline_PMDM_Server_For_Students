@@ -19,8 +19,8 @@ export const userExtractor = async (
       const token = auth.trim();
       if (auth != null && auth.length > 0) {
         let time = formatedDate()
-        let ip = req.ip
-        console.log(auth + ",  Fecha: (" + time+ ") IP: " + ip);
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.log("Nombre: "+auth + ",  Fecha: (" + time+ "),  IP: " + ip);
       } else {
         return res
           .status(401)
