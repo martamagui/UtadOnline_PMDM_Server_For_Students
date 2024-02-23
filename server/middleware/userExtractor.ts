@@ -10,6 +10,9 @@ export const userExtractor = async (
   try {
     const auth = req.headers.authorization;
     if (auth == null) {
+      let time = formatedDate()
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.log("Nombre: NULL,  Fecha: (" + time+ "),  IP: " + ip);
       return res
         .status(401)
         .json({
