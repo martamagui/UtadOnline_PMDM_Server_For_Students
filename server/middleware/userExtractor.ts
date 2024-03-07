@@ -12,7 +12,7 @@ export const userExtractor = async (
     if (auth == null) {
       let time = formatedDate()
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        console.log("Nombre: NULL,  Fecha: (" + time+ "),  IP: " + ip);
+        console.log(req.route + " Nombre: NULL,  Fecha: (" + time+ "),  IP: " + ip);
       return res
         .status(401)
         .json({
@@ -23,11 +23,11 @@ export const userExtractor = async (
       if (auth != null && auth.length > 0) {
         let time = formatedDate()
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        console.log("Nombre: "+auth + ",  Fecha: (" + time+ "),  IP: " + ip);
+        console.log(req.route +" Nombre: "+auth + ",  Fecha: (" + time+ "),  IP: " + ip);
       } else {
         let time = formatedDate()
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        console.log("Nombre: NULL,  Fecha: (" + time+ "),  IP: " + ip);
+        console.log(req.route + " Nombre: NULL,  Fecha: (" + time+ "),  IP: " + ip);
         return res
           .status(401)
           .json({
